@@ -1,0 +1,66 @@
+.home-about {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(40 * var(--width-multiplier));
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(40 * var(--width-multiplier));
+  }
+
+  &__group {
+    position: relative;
+    max-width: calc(752 * var(--width-multiplier));
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    max-width: calc(390 * var(--width-multiplier));
+    text-align: center;
+  }
+
+  &__badge {
+    @include badge-base;
+
+    &--tl {
+      --badge-delay: 0.6s;
+      top: calc(-16 * var(--width-multiplier));
+      left: calc(-20 * var(--width-multiplier));
+    }
+    &--tr {
+      --badge-delay: 1.2s;
+      top: calc(-4 * var(--width-multiplier));
+      right: calc(-2 * var(--width-multiplier));
+    }
+    &--bl {
+      --badge-delay: 0s;
+      bottom: calc(-16 * var(--width-multiplier));
+      left: calc(70 * var(--width-multiplier));
+    }
+    &--br {
+      --badge-delay: 1.8s;
+      bottom: calc(-16 * var(--width-multiplier));
+      right: calc(70 * var(--width-multiplier));
+    }
+  }
+
+  &__video {
+    border-radius: calc(100 * var(--width-multiplier)) 0 calc(100 * var(--width-multiplier)) 0;
+    overflow: hidden;
+    aspect-ratio: 16 / 5;
+
+    video, img {
+      width: 100%;
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

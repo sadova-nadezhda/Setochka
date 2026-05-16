@@ -1,0 +1,111 @@
+.faq {
+
+  &__head {
+    position: relative;
+    max-width: calc(600 * var(--width-multiplier));
+    margin: 0 auto;
+    margin-bottom: calc(70 * var(--width-multiplier));
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__label {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: calc(14 * var(--width-multiplier));
+
+    &--tl {
+      top: calc(-24 * var(--width-multiplier));
+      left: calc(110 * var(--width-multiplier));
+      transform: rotate(12deg);
+      
+    }
+    &--tr {
+      top: calc(-24 * var(--width-multiplier));
+      right: 0;
+      transform: rotate(6deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+    &--bl {
+      bottom: calc(-20 * var(--width-multiplier));
+      left: calc(60 * var(--width-multiplier));
+      transform: rotate(-12deg);
+    }
+    &--br {
+      bottom: calc(-16 * var(--width-multiplier));
+      right: calc(64 * var(--width-multiplier));
+      transform: rotate(3deg);
+    }
+  }
+
+  // ===== Accordion =====
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+    max-width: calc(964 * var(--width-multiplier));
+    margin: 0 auto;
+  }
+
+  &__item {
+    background-color: var(--dark-gray, $dark-gray);
+    border-radius: calc(20 * var(--width-multiplier));
+    overflow: hidden;
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(16 * var(--width-multiplier));
+    padding: calc(24 * var(--width-multiplier));
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__question {
+    color: var(--white, $white);
+    font: 400 calc(32 * var(--width-multiplier))/1.1 CirceRounded;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(42 * var(--width-multiplier));
+    height: calc(42 * var(--width-multiplier));
+    border-radius: calc(12 * var(--width-multiplier));
+    background-color: rgba(255, 255, 255, 0.1);
+    @include transition;
+
+    svg {
+      width: calc(16 * var(--width-multiplier));
+      height: calc(16 * var(--width-multiplier));
+      @include transition;
+    }
+  }
+
+  &__answer {
+    height: 0;
+    overflow: hidden;
+
+    p {
+      padding: 0 calc(28 * var(--width-multiplier)) calc(24 * var(--width-multiplier));
+    }
+  }
+
+  // ===== Open state =====
+
+  &__item.is-open {
+    .faq__icon svg {
+      transform: rotate(45deg);
+    }
+  }
+}

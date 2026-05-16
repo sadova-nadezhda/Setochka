@@ -1,0 +1,83 @@
+.feedback {
+  position: relative;
+  overflow: hidden;
+  background-color: #C0CCDF;
+
+  &__bg {
+    @include position-abs;
+    width: 100%;
+    height: 100%;
+
+    img {
+      @include full-img-cover;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(800 * var(--width-multiplier));
+    padding: calc(64 * var(--width-multiplier)) 0;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: calc(24 * var(--width-multiplier));
+    width: calc(360 * var(--width-multiplier));
+    padding: calc(24 * var(--width-multiplier));
+    background-color: var(--dark-gray, $dark-gray);
+    border-radius: calc(20 * var(--width-multiplier));
+    z-index: 1;
+  }
+
+    &__badge {
+    @include badge-base;
+
+    &--1 {
+      --badge-delay: 0s;
+      top: calc(80 * var(--width-multiplier));
+      left: calc(-80 * var(--width-multiplier));
+      z-index: 1;
+    }
+    &--2 {
+      --badge-delay: 0.9s;
+      top: calc(66 * var(--width-multiplier));
+      right: calc(-95 * var(--width-multiplier));
+      z-index: 1;
+    }
+    &--3 {
+      --badge-delay: 1.6s;
+      bottom: calc(106 * var(--width-multiplier));
+      right: calc(100% + calc(40 * var(--width-multiplier)));
+    }
+    &--4 {
+      --badge-delay: 0.5s;
+      bottom: calc(45 * var(--width-multiplier));
+      right: calc(-89 * var(--width-multiplier));
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+  }
+
+  &__title {
+    font: 400 calc(32 * var(--width-multiplier))/1.1 CirceRounded;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: calc(16 * var(--width-multiplier));
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { "title": "Главная" })
+  <body>
+    @@include('html/header.html')
+
+    <main>
+      @@include('html/page-hero.html', {
+        "title": "Блог о брендах, контенте и digital",
+        "desc": "Делимся наблюдениями, трендами, кейсами и практическими идеями, которые помогают брендам звучать сильнее в соцсетях и за их пределами.",
+        "accent": "#D0FF00"
+      })
+      <section class="news section-pad section-hidden">
+        <div class="container">
+          <div class="news__container">
+            <div class="news__grid">
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Что востребованно сейчас в digital рекламе?">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Что востребованно сейчас в digital рекламе?</h3>
+                    <time class="news__date">02.09.2026</time>
+                  </div>
+                </a>
+              </article>
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Как бренду вести соцсети в 2026 году">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Как бренду вести соцсети в 2026 году</h3>
+                    <time class="news__date">18.08.2026</time>
+                  </div>
+                </a>
+              </article>
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Почему контент без стратегии не работает">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Почему контент без стратегии не работает</h3>
+                    <time class="news__date">05.08.2026</time>
+                  </div>
+                </a>
+              </article>
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Почему контент без стратегии не работает">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Почему контент без стратегии не работает</h3>
+                    <time class="news__date">05.08.2026</time>
+                  </div>
+                </a>
+              </article>
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Как бренду вести соцсети в 2026 году">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Как бренду вести соцсети в 2026 году</h3>
+                    <time class="news__date">18.08.2026</time>
+                  </div>
+                </a>
+              </article>
+              <article class="news__item">
+                <a href="" class="news__link">
+                  <div class="news__img">
+                    <img src="@img/news-cover.png" alt="Что востребованно сейчас в digital рекламе?">
+                  </div>
+                  <div class="news__body">
+                    <h3 class="news__name">Что востребованно сейчас в digital рекламе?</h3>
+                    <time class="news__date">02.09.2026</time>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      @@include('html/feedback.html') 
+    </main>
+
+    @@include('html/footer.html') 
+    @@include('html/foot.html')
+  </body>
+</html>

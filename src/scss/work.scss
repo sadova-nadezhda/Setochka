@@ -1,0 +1,91 @@
+.work {
+  &__head {
+    position: relative;
+    max-width: calc(620 * var(--width-multiplier));
+    margin: 0 auto;
+    margin-bottom: calc(70 * var(--width-multiplier));
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__label {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: calc(14 * var(--width-multiplier));
+
+    &--tl {
+      top: calc(-24 * var(--width-multiplier));
+      left: calc(60 * var(--width-multiplier));
+      transform: rotate(-10deg);
+      
+    }
+    &--tr {
+      top: calc(-24 * var(--width-multiplier));
+      right: calc(84 * var(--width-multiplier));
+      transform: rotate(6deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+    &--bl {
+      bottom: calc(-20 * var(--width-multiplier));
+      left: calc(20 * var(--width-multiplier));
+      transform: rotate(-10deg);
+    }
+    &--br {
+      bottom: calc(-24 * var(--width-multiplier));
+      right: calc(64 * var(--width-multiplier));
+      transform: rotate(-8deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+    max-width: calc(964 * var(--width-multiplier));
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: calc(24 * var(--width-multiplier));
+    padding: calc(24 * var(--width-multiplier));
+    border-radius: calc(12 * var(--width-multiplier));
+    background-color: var(--dark-gray, $dark-gray);
+
+    &--accent {
+      background-color: var(--accent, $accent);
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: calc(90 * var(--width-multiplier));
+    aspect-ratio: 1/1;
+    border-radius: calc(12 * var(--width-multiplier));
+    overflow: hidden;
+    background-color: rgba(200, 190, 240, 0.25);
+
+    img {
+      @include full-img-cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+  }
+
+  &__name {
+    font: 400 calc(32 * var(--width-multiplier))/1.1 CirceRounded;
+  }
+
+  &__desc {
+    font-size: calc(14 * var(--width-multiplier));
+    max-width: calc(260 * var(--width-multiplier));
+  }
+}

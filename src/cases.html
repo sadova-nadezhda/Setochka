@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { "title": "Главная" })
+  <body>
+    @@include('html/header.html')
+
+    <main>
+      @@include('html/page-hero.html', {
+        "title": "Кейсы, где идеи <br> стали результатом",
+        "desc": "Показываем, как стратегия, контент, продакшн и реклама помогают брендам расти, выделяться и говорить с аудиторией на одном языке.",
+        "accent": "#DD60F9"
+      })
+      @@include('html/cases.html')
+      @@include('html/feedback.html') 
+    </main>
+
+    @@include('html/footer.html') 
+    @@include('html/foot.html')
+  </body>
+</html>

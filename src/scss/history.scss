@@ -1,0 +1,133 @@
+.history {
+  &__head {
+    position: relative;
+    max-width: calc(504 * var(--width-multiplier));
+    margin: 0 auto;
+    margin-bottom: calc(70 * var(--width-multiplier));
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__label {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: calc(14 * var(--width-multiplier));
+
+    &--tl {
+      top: calc(-24 * var(--width-multiplier));
+      left: 0;
+      transform: rotate(-10deg);
+      
+    }
+    &--tr {
+      top: calc(-16 * var(--width-multiplier));
+      right: calc(64 * var(--width-multiplier));
+      transform: rotate(6deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+    &--bl {
+      bottom: calc(-24 * var(--width-multiplier));
+      left: calc(20 * var(--width-multiplier));
+      transform: rotate(8deg);
+    }
+    &--br {
+      bottom: calc(-24 * var(--width-multiplier));
+      right: calc(44 * var(--width-multiplier));
+      transform: rotate(-8deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+  }
+
+  // ===== Grid =====
+
+  &__grid {
+    display: flex;
+    gap: calc(8 * var(--width-multiplier));
+    align-items: start;
+  }
+
+  &__col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+  }
+
+  // ===== Cards =====
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(284 * var(--width-multiplier));
+    background-color: var(--dark-gray, $dark-gray);
+    border-radius: calc(20 * var(--width-multiplier));
+    padding: calc(24 * var(--width-multiplier));
+    overflow: hidden;
+
+    // Right col first card: same height as one left card (~2x of a small card)
+    &--lg {
+      min-height: calc(427 * var(--width-multiplier));
+      
+      img {
+        max-width: calc(185 * var(--width-multiplier));
+        height: auto;
+        object-fit: contain;
+      }
+
+      .history__desc {
+        max-width: calc(360 * var(--width-multiplier));
+      }
+    }
+
+    // Today card: image fills available space, text at bottom
+    &--today {
+      min-height: calc(400 * var(--width-multiplier));
+      img {
+        
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &__card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+    flex-shrink: 0;
+  }
+
+  // ===== Card contents =====
+
+  &__spark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: calc(42 * var(--width-multiplier));
+    height: calc(42 * var(--width-multiplier));
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__factum {
+    flex-shrink: 0;
+  }
+
+  &__year {
+    font: 400 calc(32 * var(--width-multiplier))/1 CirceRounded;
+  }
+
+  &__desc {
+    font-size: calc(14 * var(--width-multiplier));
+    max-width: calc(257 * var(--width-multiplier));
+  }
+}

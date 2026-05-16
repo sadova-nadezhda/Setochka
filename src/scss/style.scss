@@ -1,0 +1,40 @@
+@import "fonts";
+@import "vars.scss";
+@import "global.scss";
+@import "mixins.scss";
+@import "header.scss";
+@import "page-hero.scss";
+@import "hero.scss";
+@import "about.scss";
+@import "services.scss";
+@import "cases.scss";
+@import "news.scss";
+@import "feedback.scss";
+@import "teams.scss";
+@import "who.scss";
+@import "work.scss";
+@import "people.scss";
+@import "history.scss";
+@import "values.scss";
+@import "faq.scss";
+@import "footer.scss";
+
+// ====== Swiper ======
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  &-slide {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }    
+  }
+}
+
+// ====== Section ======
+
+
+// ====== Keyframes ======

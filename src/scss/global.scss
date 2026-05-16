@@ -1,0 +1,241 @@
+@import "vars.scss";
+@import "mixins.scss";
+
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --primary: #D55900;
+  --dark-gray: #202020;
+  --accent: #9E61FF;
+  --width-base: 1440;
+  --width-current: 100vw;
+  --width-multiplier: calc(var(--width-current) / var(--width-base));
+}
+
+@media(max-width: 1024px) {
+  :root {
+    --width-base: 980;
+    --width-current: 100vmin;
+  }
+}
+
+@media(max-width: 767px) {
+  :root {
+    --width-base: 375;
+    --width-current: 100vmin;
+  }
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(64 * var(--width-multiplier));
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: var(--white, $white);
+  background-color: var(--black, $black);
+  font: 400 calc(16 * var(--width-multiplier))/1.2 CirceRounded;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1, h2 {
+  font: 400 calc(64 * var(--width-multiplier))/1.1 CirceRounded;
+  @media (max-width: 1024px) {
+    font-size: calc(42 * var(--width-multiplier));
+  }
+  @media (max-width: 767px) {
+    font-size: calc(32 * var(--width-multiplier));
+  }
+}
+
+h3 {
+  font: 400 calc(32 * var(--width-multiplier))/1.1 CirceRounded;
+  @media (max-width: 767px) {
+    font-size: calc(24 * var(--width-multiplier));
+  }
+}
+
+h4 {
+ font: 400 calc(24 * var(--width-multiplier))/1.1 CirceRounded;
+   @media (max-width: 767px) {
+    font-size: calc(20 * var(--width-multiplier));
+  }
+}
+
+h5, h6 {
+  font-family: inherit;
+  line-height: 1.2em;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article>*+* {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: calc(12 * var(--width-multiplier));
+  border: 0;
+  border-radius: calc(8 * var(--width-multiplier));
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.1);
+  font: inherit;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  &:focus, &:focus-visible {
+    outline: none;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--white, $white) inset !important;
+  box-shadow: 0 0 0 1000px var(--white, $white) inset !important;
+  -webkit-text-fill-color: var(--black, $black) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+textarea {
+  resize: none;
+  height: calc(90 * var(--width-multiplier));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+  }
+}
+
+// ====== Global ======
+
+.container {
+  width: 100%;
+  padding: 0 calc(20 * var(--width-multiplier));
+  @media(max-width: 1024px) {
+    padding: 0 calc(16 * var(--width-multiplier));
+  }
+}
+
+.section {
+  &-pad {
+    padding: calc(64 * var(--width-multiplier)) 0;
+    &-top {
+      padding-top: calc(64 * var(--width-multiplier));
+    }
+    &-bottom {
+      padding-bottom: calc(64 * var(--width-multiplier));
+    }
+  }
+  &-hidden {
+    overflow: hidden;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: calc(16 * var(--width-multiplier)) calc(32 * var(--width-multiplier));
+  border-radius: 0;
+  border-top-right-radius: calc(20 * var(--width-multiplier));
+  border-bottom-left-radius: calc(20 * var(--width-multiplier));
+  background-color: var(--white, $white);
+  color: var(--black, $black);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.3s ease-out;
+
+  &:hover {
+    opacity: 0.85;
+  }
+  &:disabled {
+    opacity: 0.4;
+  }
+  
+}
+
+.text {
+  &-lower {
+    text-transform: lowercase;
+  }
+  &-up {
+    text-transform: uppercase;
+  }
+}

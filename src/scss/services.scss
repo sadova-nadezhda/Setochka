@@ -1,0 +1,101 @@
+.services {
+
+  &__head {
+    position: relative;
+    max-width: calc(766 * var(--width-multiplier));
+    margin: 0 auto;
+    margin-bottom: calc(70 * var(--width-multiplier));
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__label {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: calc(14 * var(--width-multiplier));
+
+    &--tl {
+      top: calc(-30 * var(--width-multiplier));
+      left: calc(18 * var(--width-multiplier));
+      transform: rotate(-12deg);
+      font-size: calc(20 * var(--width-multiplier));
+    }
+    &--tr {
+      top: calc(-6 * var(--width-multiplier));
+      right: calc(92 * var(--width-multiplier));
+      transform: rotate(5deg);
+      font-size: calc(10 * var(--width-multiplier));
+    }
+    &--bl {
+      bottom: calc(-4 * var(--width-multiplier));
+      left: calc(120 * var(--width-multiplier));
+      transform: rotate(12deg);
+    }
+    &--br {
+      bottom: calc(-8 * var(--width-multiplier));
+      right: calc(64 * var(--width-multiplier));
+      transform: rotate(-18deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 * var(--width-multiplier));
+    max-width: calc(990 * var(--width-multiplier));
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: calc(380 * var(--width-multiplier)) auto;
+    gap: calc(32 * var(--width-multiplier));
+    padding: calc(24 * var(--width-multiplier));
+    border-radius: calc(20 * var(--width-multiplier));
+    background-color: var(--dark-gray, $dark-gray);
+    overflow: hidden;
+  }
+
+  &__preview {
+    padding: calc(36 * var(--width-multiplier)) calc(58 * var(--width-multiplier));
+    background-color: #EAE7F5;
+    border-radius: calc(20 * var(--width-multiplier));
+    overflow: hidden;
+
+    img {
+      border-radius: calc(12 * var(--width-multiplier));
+      @include full-img-cover;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(270 * var(--width-multiplier));
+  }
+
+  &__name {
+    font: 400 calc(32 * var(--width-multiplier))/1.15 CirceRounded;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(16 * var(--width-multiplier));
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: calc(8 * var(--width-multiplier));
+    font-size: calc(14 * var(--width-multiplier));
+  }
+
+  &__col-label {
+    font-weight: 700;
+  }
+}
