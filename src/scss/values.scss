@@ -21,22 +21,23 @@
 
     .container {
       position: relative;
-      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100%;
+      z-index: 1;
     }
   }
 
   &__head {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    width: 100%;
+    max-width: calc(504 * var(--width-multiplier));
+    margin: 0 auto;
   }
 
   &__title {
     text-align: center;
-    color: var(--white, $white);
   }
 
   &__label {
@@ -45,25 +46,26 @@
     font-size: calc(14 * var(--width-multiplier));
 
     &--tl {
-      top: 30%;
-      left: 24%;
-      transform: rotate(-8deg);
+      top: calc(-24 * var(--width-multiplier));
+      left: calc(64 * var(--width-multiplier));
+      transform: rotate(12deg);
+      
     }
     &--tr {
-      top: 28%;
-      right: 22%;
+      top: calc(-16 * var(--width-multiplier));
+      right: calc(52 * var(--width-multiplier));
       transform: rotate(6deg);
       font-size: calc(20 * var(--width-multiplier));
     }
     &--bl {
-      bottom: 28%;
-      left: 23%;
+      bottom: calc(-8 * var(--width-multiplier));
+      left: calc(84 * var(--width-multiplier));
       transform: rotate(8deg);
     }
     &--br {
-      bottom: 27%;
-      right: 21%;
-      transform: rotate(-6deg);
+      bottom: calc(-16 * var(--width-multiplier));
+      right: calc(8 * var(--width-multiplier));
+      transform: rotate(-8deg);
       font-size: calc(20 * var(--width-multiplier));
     }
   }
@@ -73,25 +75,27 @@
   &__cards-wrap {
     position: relative;
     z-index: 1;
-    background-color: var(--black, $black);
-    padding-top: calc(64 * var(--width-multiplier));
-    padding-bottom: calc(80 * var(--width-multiplier));
   }
 
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: calc(24 * var(--width-multiplier));
-    align-items: end;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
+    &:nth-child(odd) {
+      margin-top: calc(90 * var(--width-multiplier));
+    }
   }
 
   &__img {
     width: 100%;
+    border-radius: calc(20 * var(--width-multiplier));
+    background-color: rgba(32, 32, 32, 1);
+    backdrop-filter: blur(20px);
 
     img {
       display: block;
@@ -105,6 +109,9 @@
     flex-direction: column;
     gap: calc(8 * var(--width-multiplier));
     padding: calc(20 * var(--width-multiplier)) 0 0;
+    border-radius: calc(20 * var(--width-multiplier));
+    background-color: rgba(32, 32, 32, 1);
+    backdrop-filter: blur(20px);
     text-align: center;
   }
 

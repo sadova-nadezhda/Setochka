@@ -26,12 +26,12 @@
   }
 
   &__img {
-    aspect-ratio: 3/4;
+    height: calc(356 * var(--width-multiplier));
     overflow: hidden;
     border-radius: calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier)) 0;
 
     img {
-      @include full-img-cover;
+      @include full-img-contain;
     }
   }
 

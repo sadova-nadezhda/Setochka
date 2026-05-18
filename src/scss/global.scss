@@ -7,6 +7,7 @@
   --primary: #D55900;
   --dark-gray: #202020;
   --accent: #9E61FF;
+  --pink: #FA115B;
   --width-base: 1440;
   --width-current: 100vw;
   --width-multiplier: calc(var(--width-current) / var(--width-base));
@@ -212,18 +213,16 @@ textarea {
   justify-content: center;
   width: max-content;
   padding: calc(16 * var(--width-multiplier)) calc(32 * var(--width-multiplier));
-  border-radius: 0;
-  border-top-right-radius: calc(20 * var(--width-multiplier));
-  border-bottom-left-radius: calc(20 * var(--width-multiplier));
+  border-radius: 0 calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier));
   background-color: var(--white, $white);
   color: var(--black, $black);
   font: inherit;
   line-height: 1;
   cursor: pointer;
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, border-radius 0.3s ease-out;
 
   &:hover {
-    opacity: 0.85;
+    border-radius: calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier)) 0;
   }
   &:disabled {
     opacity: 0.4;

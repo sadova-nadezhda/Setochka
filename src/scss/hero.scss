@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    padding: calc(240 * var(--width-multiplier)) 0;
-    padding-bottom: calc(120 * var(--width-multiplier));
+    padding: calc(120 * var(--width-multiplier)) 0;
+    padding-bottom: calc(100 * var(--width-multiplier));
   }
 
   &__letters {
@@ -13,7 +13,7 @@
     display: flex;
     align-items: flex-end;
     gap: calc(8 * var(--width-multiplier));
-    margin-bottom: calc(120 * var(--width-multiplier));
+    margin-bottom: calc(50 * var(--width-multiplier));
   }
 
   &__letter {
@@ -57,5 +57,9 @@
     font-size: calc(14 * var(--width-multiplier));
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__btn {
+    width: 100%;
   }
 }

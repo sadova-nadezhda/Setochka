@@ -71,5 +71,13 @@
     span {
       color: rgba(255, 255, 255, 0.5);
     }
+
+    a {
+      color: rgba(255, 255, 255, 1);
+      transition: color 0.3s ease-out;
+      &:hover {
+        color: var(--pink, $pink);
+      }
+    }
   }
 }

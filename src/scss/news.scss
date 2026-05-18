@@ -42,8 +42,8 @@
     gap: calc(16 * var(--width-multiplier));
 
     &:hover {
-      .home-news__img img {
-        transform: scale(1.04);
+      .news__img img {
+        transform: scale(1.05);
       }
     }
   }
@@ -51,11 +51,11 @@
   &__img {
     border-radius: calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier)) 0;
     overflow: hidden;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
 
     img {
       @include full-img-cover;
-      @include transition;
+      transition: transform 0.3s ease-out;
     }
   }
 

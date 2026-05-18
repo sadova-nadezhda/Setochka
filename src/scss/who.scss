@@ -1,4 +1,5 @@
 .who {
+  padding-top: calc(94 * var(--width-multiplier));
   &__head {
     position: relative;
     max-width: calc(400 * var(--width-multiplier));
@@ -104,6 +105,7 @@
   }
 
   &__stat-desc {
+    max-width: calc(180 * var(--width-multiplier));
     font-size: calc(14 * var(--width-multiplier));
   }
 }

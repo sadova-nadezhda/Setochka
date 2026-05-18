@@ -49,6 +49,8 @@
 
     a {
       padding: calc(8 * var(--width-multiplier)) calc(10 * var(--width-multiplier));
+      border-radius: calc(8 * var(--width-multiplier));
+      background-color: #000000;
       transition: color 0.3s ease-out;
 
       &:hover {
