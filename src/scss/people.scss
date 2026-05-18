@@ -14,10 +14,11 @@
   &__grid {
     width: 100%;
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr 0.9fr;
+    grid-template-columns: repeat(3, auto);
     column-gap: calc(110 * var(--width-multiplier));
     row-gap: calc(64 * var(--width-multiplier));
     align-items: center;
+    justify-content: center;
   }
 
   &__item {

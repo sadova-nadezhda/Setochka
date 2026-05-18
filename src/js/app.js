@@ -1,6 +1,8 @@
 (() => {
   "use strict";
 
+  document.documentElement.classList.add("is-enhanced");
+
   // Helpers (если у тебя их нет глобально)
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -234,6 +236,44 @@
   };
 
   // ======================
+  // Title burst labels
+  // ======================
+  const initTitleBursts = () => {
+    const groups = $$(".title-burst");
+    if (!groups.length) return;
+
+    groups.forEach((group) => {
+      $$(".title-burst__label", group).forEach((label, index) => {
+        label.style.setProperty("--burst-order", index);
+      });
+    });
+
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      groups.forEach((group) => group.classList.add("is-burst-active"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-burst-active");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.35,
+        rootMargin: "0px 0px -12% 0px",
+      }
+    );
+
+    groups.forEach((group) => observer.observe(group));
+  };
+
+  // ======================
   // Services stack on scroll
   // ======================
   const initServices = () => {
@@ -371,6 +411,51 @@
   };
 
   // ======================
+  // Feedback parallax
+  // ======================
+  const initFeedbackParallax = () => {
+    if (!window.gsap || !window.ScrollTrigger) return;
+
+    const section = $(".feedback");
+    if (!section) return;
+
+    const bgImage = $(".feedback__bg img", section);
+    if (!bgImage) return;
+
+    const { gsap, ScrollTrigger } = window;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const getShift = () => Math.max(s(32), Math.min(s(72), window.innerHeight * 0.08));
+
+      const tween = gsap.fromTo(
+        bgImage,
+        { y: () => -getShift() },
+        {
+          y: () => getShift(),
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+
+      return () => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+        gsap.set(bgImage, { clearProps: "transform" });
+      };
+    });
+  };
+
+  // ======================
   // FAQ accordion
   // ======================
   const initFaq = () => {
@@ -419,8 +504,10 @@
     initModals({ scrollLock });
     initFaq();
     initHeader();
+    initTitleBursts();
     initServices();
-
+    initFeedbackParallax();
+    initValuesPin();
     window.addEventListener("resize", () => {
       updateMultiplier();
     });

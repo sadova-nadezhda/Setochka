@@ -18,24 +18,28 @@
     &--tl {
       top: calc(-24 * var(--width-multiplier));
       left: 0;
-      transform: rotate(-10deg);
+      --label-rotate: -10deg;
+      transform: rotate(var(--label-rotate));
       
     }
     &--tr {
       top: calc(-16 * var(--width-multiplier));
       right: calc(64 * var(--width-multiplier));
-      transform: rotate(6deg);
+      --label-rotate: 6deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(20 * var(--width-multiplier));
     }
     &--bl {
       bottom: calc(-24 * var(--width-multiplier));
       left: calc(20 * var(--width-multiplier));
-      transform: rotate(8deg);
+      --label-rotate: 8deg;
+      transform: rotate(var(--label-rotate));
     }
     &--br {
       bottom: calc(-24 * var(--width-multiplier));
       right: calc(44 * var(--width-multiplier));
-      transform: rotate(-8deg);
+      --label-rotate: -8deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(20 * var(--width-multiplier));
     }
   }

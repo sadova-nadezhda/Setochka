@@ -25,24 +25,28 @@
     &--tl {
       top: calc(-30 * var(--width-multiplier));
       left: calc(18 * var(--width-multiplier));
-      transform: rotate(-12deg);
+      --label-rotate: -12deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(20 * var(--width-multiplier));
     }
     &--tr {
       top: calc(-6 * var(--width-multiplier));
       right: calc(92 * var(--width-multiplier));
-      transform: rotate(5deg);
+      --label-rotate: 5deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(10 * var(--width-multiplier));
     }
     &--bl {
       bottom: calc(-4 * var(--width-multiplier));
       left: calc(120 * var(--width-multiplier));
-      transform: rotate(12deg);
+      --label-rotate: 12deg;
+      transform: rotate(var(--label-rotate));
     }
     &--br {
       bottom: calc(-8 * var(--width-multiplier));
       right: calc(64 * var(--width-multiplier));
-      transform: rotate(-18deg);
+      --label-rotate: -18deg;
+      transform: rotate(var(--label-rotate));
     }
   }
 

@@ -25,6 +25,48 @@
   50%       { transform: translateY(calc(-7 * var(--width-multiplier))); }
 }
 
+@keyframes title-burst-appear {
+  0% {
+    opacity: 0;
+    filter: blur(calc(10 * var(--width-multiplier)));
+    transform: translate3d(var(--label-shift-x, 0), var(--label-shift-y, 0), 0)
+      rotate(var(--label-rotate, 0deg)) scale(0.2);
+  }
+  38% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(1.12);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(0.94);
+  }
+  74% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(1);
+  }
+}
+
+@keyframes title-burst-ring {
+  0%, 62% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  74% {
+    opacity: 0.78;
+    transform: scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
 @mixin badge-base {
   position: absolute;
   display: flex;

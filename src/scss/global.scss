@@ -180,6 +180,17 @@ textarea {
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
   }
+
+  .title-burst__label,
+  .title-burst__label::after {
+    animation: none !important;
+  }
+
+  .title-burst__label {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(1) !important;
+  }
 }
 
 // ====== Global ======
@@ -205,6 +216,72 @@ textarea {
   &-hidden {
     overflow: hidden;
   }
+}
+
+.title-burst {
+  position: relative;
+}
+
+.title-burst__label {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0) rotate(var(--label-rotate, 0deg)) scale(1);
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: calc(-8 * var(--width-multiplier)) calc(-12 * var(--width-multiplier));
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    opacity: 0;
+    transform: scale(0.55);
+    pointer-events: none;
+  }
+
+  &[class*="--tl"] {
+    --label-shift-x: calc(-18 * var(--width-multiplier));
+    --label-shift-y: calc(-16 * var(--width-multiplier));
+  }
+
+  &[class*="--tr"] {
+    --label-shift-x: calc(18 * var(--width-multiplier));
+    --label-shift-y: calc(-14 * var(--width-multiplier));
+  }
+
+  &[class*="--bl"] {
+    --label-shift-x: calc(-16 * var(--width-multiplier));
+    --label-shift-y: calc(18 * var(--width-multiplier));
+  }
+
+  &[class*="--br"] {
+    --label-shift-x: calc(18 * var(--width-multiplier));
+    --label-shift-y: calc(18 * var(--width-multiplier));
+  }
+}
+
+.is-enhanced .title-burst:not(.is-burst-active) .title-burst__label {
+  opacity: 0;
+  filter: blur(calc(10 * var(--width-multiplier)));
+  transform: translate3d(var(--label-shift-x, 0), var(--label-shift-y, 0), 0)
+    rotate(var(--label-rotate, 0deg)) scale(0.2);
+}
+
+.is-enhanced .title-burst.is-burst-active .title-burst__label {
+  animation: title-burst-appear 1.1s cubic-bezier(0.2, 0.9, 0.25, 1.25) both;
+  animation-delay: calc(var(--burst-order, 0) * 0.16s + var(--burst-delay, 0s));
+}
+
+.is-enhanced .title-burst.is-burst-active .title-burst__label::after {
+  animation: title-burst-ring 1.1s ease-out both;
+  animation-delay: calc(var(--burst-order, 0) * 0.16s + var(--burst-delay, 0s));
 }
 
 .button {

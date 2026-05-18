@@ -1,6 +1,7 @@
 .values {
+  position: relative;
   padding: 0;
-  overflow: visible; // override .section-hidden — sticky breaks inside overflow:hidden
+  overflow: visible;
 
   // ===== Sticky background =====
 
@@ -18,13 +19,18 @@
       height: 100%;
       object-fit: cover;
     }
+  }
 
+  &__head-wrap {
     .container {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
+      height: 100vh;
       z-index: 1;
     }
   }
@@ -48,24 +54,28 @@
     &--tl {
       top: calc(-24 * var(--width-multiplier));
       left: calc(64 * var(--width-multiplier));
-      transform: rotate(12deg);
+      --label-rotate: 12deg;
+      transform: rotate(var(--label-rotate));
       
     }
     &--tr {
       top: calc(-16 * var(--width-multiplier));
       right: calc(52 * var(--width-multiplier));
-      transform: rotate(6deg);
+      --label-rotate: 6deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(20 * var(--width-multiplier));
     }
     &--bl {
       bottom: calc(-8 * var(--width-multiplier));
       left: calc(84 * var(--width-multiplier));
-      transform: rotate(8deg);
+      --label-rotate: 8deg;
+      transform: rotate(var(--label-rotate));
     }
     &--br {
       bottom: calc(-16 * var(--width-multiplier));
       right: calc(8 * var(--width-multiplier));
-      transform: rotate(-8deg);
+      --label-rotate: -8deg;
+      transform: rotate(var(--label-rotate));
       font-size: calc(20 * var(--width-multiplier));
     }
   }
@@ -74,6 +84,7 @@
 
   &__cards-wrap {
     position: relative;
+    padding-bottom: calc(64 * var(--width-multiplier));
     z-index: 1;
   }
 
@@ -81,6 +92,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: calc(24 * var(--width-multiplier));
+    max-width: calc(1216 * var(--width-multiplier));
+    margin: 0 auto;
   }
 
   &__item {
@@ -93,14 +106,16 @@
 
   &__img {
     width: 100%;
+    height: calc(305 * var(--width-multiplier));
     border-radius: calc(20 * var(--width-multiplier));
     background-color: rgba(32, 32, 32, 1);
     backdrop-filter: blur(20px);
 
     img {
       display: block;
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -108,7 +123,7 @@
     display: flex;
     flex-direction: column;
     gap: calc(8 * var(--width-multiplier));
-    padding: calc(20 * var(--width-multiplier)) 0 0;
+    padding: calc(24 * var(--width-multiplier));
     border-radius: calc(20 * var(--width-multiplier));
     background-color: rgba(32, 32, 32, 1);
     backdrop-filter: blur(20px);
