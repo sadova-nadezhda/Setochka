@@ -303,6 +303,7 @@ textarea {
   justify-content: center;
   width: max-content;
   padding: calc(16 * var(--width-multiplier)) calc(32 * var(--width-multiplier));
+  border: none;
   border-radius: 0 calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier));
   background-color: var(--white, $white);
   color: var(--black, $black);
