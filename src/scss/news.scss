@@ -6,6 +6,10 @@
     max-width: calc(252 * var(--width-multiplier));
     margin: 0 auto;
     margin-bottom: calc(32 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      max-width: unset;
+      margin-bottom: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__title {
@@ -20,11 +24,18 @@
     font-size: calc(14 * var(--width-multiplier));
     color: #FA115B;
     white-space: nowrap;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__more {
     margin: 0 auto;
     margin-top: calc(32 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-top: calc(24 * var(--width-multiplier));
+    }
   }
 }
 
@@ -34,6 +45,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: calc(20 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__link {

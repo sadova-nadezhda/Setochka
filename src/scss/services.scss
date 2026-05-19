@@ -8,8 +8,12 @@
     margin: 0 auto;
     margin-bottom: calc(70 * var(--width-multiplier));
 
+    @media (max-width: 1024px) {
+      margin-bottom: calc(50 * var(--width-multiplier));
+    }
+
     @media (max-width: 767px) {
-      margin-bottom: calc(40 * var(--width-multiplier));
+      margin-bottom: calc(24 * var(--width-multiplier));
     }
   }
 
@@ -101,13 +105,13 @@
     overflow: hidden;
 
     @media (max-width: 1024px) {
-      padding: calc(24 * var(--width-multiplier));
+      padding: calc(16 * var(--width-multiplier));
     }
 
     @media (max-width: 767px) {
-      padding: calc(20 * var(--width-multiplier));
+      height: calc(220 * var(--width-multiplier));
+      padding: calc(8 * var(--width-multiplier));
       border-radius: calc(16 * var(--width-multiplier));
-      aspect-ratio: 1.08;
     }
 
     img {
@@ -125,7 +129,7 @@
 
     @media (max-width: 767px) {
       min-height: 0;
-      gap: calc(20 * var(--width-multiplier));
+      gap: calc(16 * var(--width-multiplier));
     }
   }
 
@@ -133,11 +137,11 @@
     font: 400 calc(32 * var(--width-multiplier))/1.15 CirceRounded;
 
     @media (max-width: 1024px) {
-      font-size: calc(28 * var(--width-multiplier));
+      font-size: calc(24 * var(--width-multiplier));
     }
 
     @media (max-width: 767px) {
-      font-size: calc(24 * var(--width-multiplier));
+      font-size: calc(22 * var(--width-multiplier));
     }
   }
 
@@ -157,10 +161,6 @@
     flex-direction: column;
     gap: calc(8 * var(--width-multiplier));
     font-size: calc(14 * var(--width-multiplier));
-
-    @media (max-width: 767px) {
-      font-size: calc(13 * var(--width-multiplier));
-    }
   }
 
   &__col-label {

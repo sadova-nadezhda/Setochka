@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', { "title": "Pepsi — Кейс | Сеточка" })
+  <body>
+    @@include('html/header.html')
+
+    <main>
+
+      <!-- ====== Case Hero ====== -->
+      <section class="case-hero">
+        <div class="case-hero__media">
+          <!-- Замени на img если нет видео: <img src="@img/cases-2.png" alt="Pepsi"> -->
+          <video autoplay muted loop playsinline>
+            <source src="@img/hero-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="case-hero__overlay"></div>
+        <div class="container">
+          <div class="case-hero__container">
+            <div class="case-hero__content">
+              <h1 class="case-hero__title">Pepsi — видеореклама для digital-кампании</h1>
+              <p class="case-hero__desc">Создали видеорекламу для Pepsi: от идеи и визуальной подачи до съёмки и монтажа. Получился динамичный digital-контент, который передаёт энергию бренда и цепляет внимание с первых секунд.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== Case Gallery ====== -->
+      <section class="case-gallery section-pad section-hidden">
+        <div class="container">
+          <div class="case-gallery__grid">
+
+            <div class="case-gallery__item case-gallery__item--wide">
+              <img src="@img/cases-2.png" alt="">
+            </div>
+
+            <div class="case-gallery__row">
+              <div class="case-gallery__item">
+                <img src="@img/cases-3.png" alt="">
+              </div>
+              <div class="case-gallery__item">
+                <img src="@img/cases-2.png" alt="">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      @@include('html/feedback.html')
+    </main>
+
+    @@include('html/footer.html')
+    @@include('html/foot.html')
+  </body>
+</html>

@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
     gap: calc(40 * var(--width-multiplier));
+    @media(max-width: 1024px) {
+      gap: calc(32 * var(--width-multiplier));
+    }
+    @media(max-width: 767px) {
+      gap: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__top {
@@ -10,11 +16,20 @@
     flex-direction: column;
     align-items: center;
     gap: calc(40 * var(--width-multiplier));
+    @media(max-width: 1024px) {
+      gap: calc(32 * var(--width-multiplier));
+    }
+    @media(max-width: 767px) {
+      gap: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__group {
     position: relative;
     max-width: calc(752 * var(--width-multiplier));
+    @media(max-width: 767px) {
+      max-width: unset;
+    }
   }
 
   &__title {
@@ -24,6 +39,9 @@
   &__desc {
     max-width: calc(390 * var(--width-multiplier));
     text-align: center;
+    @media(max-width: 767px) {
+      max-width: unset;
+    }
   }
 
   &__badge {
@@ -52,15 +70,25 @@
   }
 
   &__video {
+    height: calc(400 * var(--width-multiplier));
     border-radius: calc(100 * var(--width-multiplier)) 0 calc(100 * var(--width-multiplier)) 0;
     overflow: hidden;
-    aspect-ratio: 16 / 5;
 
     video, img {
       width: 100%;
       min-width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media(max-width: 1024px) {
+      height: calc(300 * var(--width-multiplier));
+      border-radius: calc(40 * var(--width-multiplier)) 0 calc(40 * var(--width-multiplier)) 0;
+    }
+
+    @media(max-width: 767px) {
+      height: calc(220 * var(--width-multiplier));
+      border-radius: calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier)) 0;
     }
   }
 }

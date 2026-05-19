@@ -19,6 +19,14 @@
       height: 100%;
       object-fit: cover;
     }
+
+    @media(max-width: 1024px) {
+      height: 60vh;
+    }
+    @media (max-width: 767px) {
+      position: relative;
+      height: 35vh;
+    }
   }
 
   &__head-wrap {
@@ -32,6 +40,12 @@
       justify-content: center;
       height: 100vh;
       z-index: 1;
+      @media(max-width: 1024px) {
+        height: 60vh;
+      }
+      @media (max-width: 767px) {
+        height: 35vh;
+      }
     }
   }
 
@@ -84,8 +98,13 @@
 
   &__cards-wrap {
     position: relative;
+    padding-top: calc(64 * var(--width-multiplier));
     padding-bottom: calc(64 * var(--width-multiplier));
     z-index: 1;
+    @media (max-width: 767px) {
+      padding-top: calc(32 * var(--width-multiplier));
+      padding-bottom: calc(32 * var(--width-multiplier));
+    }
   }
 
   &__cards {
@@ -94,6 +113,10 @@
     column-gap: calc(24 * var(--width-multiplier));
     max-width: calc(1216 * var(--width-multiplier));
     margin: 0 auto;
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__item {
@@ -101,6 +124,9 @@
     flex-direction: column;
     &:nth-child(odd) {
       margin-top: calc(90 * var(--width-multiplier));
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -110,6 +136,9 @@
     border-radius: calc(20 * var(--width-multiplier));
     background-color: rgba(32, 32, 32, 1);
     backdrop-filter: blur(20px);
+    @media (max-width: 767px) {
+      height: calc(220 * var(--width-multiplier));
+    }
 
     img {
       display: block;
@@ -128,6 +157,9 @@
     background-color: rgba(32, 32, 32, 1);
     backdrop-filter: blur(20px);
     text-align: center;
+    @media (max-width: 767px) {
+      padding: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__name {

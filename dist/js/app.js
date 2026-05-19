@@ -224,15 +224,45 @@
   };
 
   // ======================
-  // Header on scroll
+  // Header on scroll + burger
   // ======================
-  const initHeader = () => {
+  const initHeader = ({ scrollLock } = {}) => {
     const header = $(".header");
     if (!header) return;
 
     const update = () => header.classList.toggle("is-scrolled", window.scrollY > 10);
     update();
     window.addEventListener("scroll", update, { passive: true });
+
+    const burger = $(".header__burger", header);
+    const nav = $(".header__nav", header);
+    if (!burger || !nav) return;
+
+    const closeMenu = () => {
+      burger.classList.remove("active");
+      nav.classList.remove("is-open");
+      scrollLock?.unlock("menu");
+    };
+
+    const openMenu = () => {
+      burger.classList.add("active");
+      nav.classList.add("is-open");
+      scrollLock?.lock("menu");
+    };
+
+    burger.addEventListener("click", () => {
+      burger.classList.contains("active") ? closeMenu() : openMenu();
+    });
+
+    $$("a", nav).forEach((link) => link.addEventListener("click", closeMenu));
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1024) closeMenu();
+    }, { passive: true });
   };
 
   // ======================
@@ -503,7 +533,7 @@
     initPhoneMask();
     initModals({ scrollLock });
     initFaq();
-    initHeader();
+    initHeader({ scrollLock });
     initTitleBursts();
     initServices();
     initFeedbackParallax();

@@ -1,0 +1,94 @@
+// ====== News Inner Hero ======
+
+.news-inner {
+  padding-top: calc(140 * var(--width-multiplier));
+  @media (max-width: 767px) {
+    padding-top: calc(120 * var(--width-multiplier));
+  }
+
+  &__container {
+    max-width: calc(964 * var(--width-multiplier));
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: calc(24 * var(--width-multiplier));
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: calc(12 * var(--width-multiplier));
+    font-size: calc(14 * var(--width-multiplier));
+  }
+
+  &__title {
+    font: 400 calc(42 * var(--width-multiplier))/1.1 CirceRounded;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+      font-size: calc(32 * var(--width-multiplier));
+    }
+
+    @media (max-width: 767px) {
+      font-size: calc(24 * var(--width-multiplier));
+    }
+  }
+
+  &__cover {
+    height: calc(420 * var(--width-multiplier));
+    margin-bottom: calc(42 * var(--width-multiplier));
+    border-radius: calc(20 * var(--width-multiplier)) 0 calc(20 * var(--width-multiplier)) 0;
+    overflow: hidden;
+    background-color: var(--dark-gray, $dark-gray);
+
+    img,
+    video {
+      @include full-img-cover;
+    }
+
+    @media (max-width: 1024px) {
+      height: calc(320 * var(--width-multiplier));
+    }
+
+    @media (max-width: 767px) {
+      height: calc(220 * var(--width-multiplier));
+      margin-bottom: calc(24 * var(--width-multiplier));
+    }
+  }
+}
+
+// ====== News Article Body ======
+
+.news-article {
+
+  &__layout {
+    max-width: calc(574 * var(--width-multiplier));
+    margin: 0 auto;
+  }
+
+  &__body {
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: calc(16 * var(--width-multiplier));
+      @media (max-width: 767px) {
+        margin-bottom: calc(8 * var(--width-multiplier));
+      }
+    }
+
+    h2 {
+      font: 400 calc(24 * var(--width-multiplier))/1.2 CirceRounded;
+      @media (max-width: 767px) {
+        font-size: calc(22 * var(--width-multiplier));
+      }
+    }
+
+    p, ul, ol {
+      margin: calc(24 * var(--width-multiplier)) 0;
+      margin-top: calc(16 * var(--width-multiplier));
+      @media (max-width: 767px) {
+        margin: calc(16 * var(--width-multiplier)) 0;
+        margin-top: calc(8 * var(--width-multiplier));
+      }
+    }
+  }
+}

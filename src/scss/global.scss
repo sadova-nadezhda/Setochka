@@ -206,11 +206,20 @@ textarea {
 .section {
   &-pad {
     padding: calc(64 * var(--width-multiplier)) 0;
+    @media(max-width: 767px) {
+      padding: calc(32 * var(--width-multiplier)) 0;
+    }
     &-top {
       padding-top: calc(64 * var(--width-multiplier));
+      @media(max-width: 767px) {
+        padding-top: calc(32 * var(--width-multiplier));
+      }
     }
     &-bottom {
       padding-bottom: calc(64 * var(--width-multiplier));
+      @media(max-width: 767px) {
+        padding-bottom: calc(32 * var(--width-multiplier));
+      }
     }
   }
   &-hidden {
@@ -264,6 +273,10 @@ textarea {
   &[class*="--br"] {
     --label-shift-x: calc(18 * var(--width-multiplier));
     --label-shift-y: calc(18 * var(--width-multiplier));
+  }
+
+  @media(max-width: 767px) {
+    display: none;
   }
 }
 

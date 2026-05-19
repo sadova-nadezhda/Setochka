@@ -4,11 +4,17 @@
     flex-direction: column;
     align-items: center;
     gap: calc(40 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      gap: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__title {
     text-align: center;
     max-width: calc(620 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      max-width: calc(320 * var(--width-multiplier));
+    }
   }
 
   &__grid {
@@ -19,6 +25,13 @@
     row-gap: calc(64 * var(--width-multiplier));
     align-items: center;
     justify-content: center;
+    @media (max-width: 1024px) {
+      gap: calc(64 * var(--width-multiplier));
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__item {
@@ -30,6 +43,9 @@
     &:nth-child(3n + 2) {
       .people__img {
         height: calc(480 * var(--width-multiplier));
+        @media (max-width: 767px) {
+          height: calc(180 * var(--width-multiplier));
+        }
       }
     }
   }
@@ -40,6 +56,9 @@
       width: auto;
       height: 100%;
       object-fit: contain;
+    }
+    @media (max-width: 767px) {
+      height: calc(180 * var(--width-multiplier));
     }
   }
 
@@ -53,10 +72,16 @@
 
   &__name {
     font: 400 calc(24 * var(--width-multiplier))/1.1 CirceRounded;
+    @media (max-width: 767px) {
+      font-size: calc(20 * var(--width-multiplier));
+    }
   }
 
   &__desc {
     max-width: calc(280 * var(--width-multiplier));
     font-size: calc(14 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      font-size: calc(12 * var(--width-multiplier));
+    }
   }
 }

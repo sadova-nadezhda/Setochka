@@ -6,6 +6,10 @@
     max-width: calc(350 * var(--width-multiplier));
     margin: 0 auto;
     margin-bottom: calc(32 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      max-width: unset;
+      margin-bottom: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__title {
@@ -20,6 +24,9 @@
     font-size: calc(14 * var(--width-multiplier));
     color: #FA115B;
     white-space: nowrap;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__grid {
@@ -27,6 +34,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: calc(12 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -46,9 +56,15 @@
 
     &:nth-child(4n + 2) {
       border-radius: calc(20 * var(--width-multiplier)) calc(200 * var(--width-multiplier)) calc(20 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+      @media (max-width: 767px) {
+        border-radius: calc(20 * var(--width-multiplier)) calc(80 * var(--width-multiplier)) calc(20 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+      }
     }
     &:nth-child(4n + 3) {
       border-radius: calc(20 * var(--width-multiplier)) calc(20 * var(--width-multiplier)) calc(200 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+      @media (max-width: 767px) {
+        border-radius: calc(20 * var(--width-multiplier)) calc(20 * var(--width-multiplier)) calc(80 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+      }
     }
     &:hover {
       cursor: pointer;
@@ -76,6 +92,9 @@
     flex-direction: column;
     justify-content: space-between;
     padding: calc(24 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      padding: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__name {
@@ -83,6 +102,9 @@
     font-size: calc(24 * var(--width-multiplier));
     line-height: 1;
     z-index: 1;
+    @media (max-width: 767px) {
+      font-size: calc(20 * var(--width-multiplier));
+    }
   }
 
   &__tags {
@@ -105,6 +127,10 @@
     width: calc(222 * var(--width-multiplier));
     margin: 0 auto;
     margin-top: calc(32 * var(--width-multiplier));
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-top: calc(24 * var(--width-multiplier));
+    }
   }
 }
 

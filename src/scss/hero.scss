@@ -6,6 +6,14 @@
     min-height: 100vh;
     padding: calc(120 * var(--width-multiplier)) 0;
     padding-bottom: calc(100 * var(--width-multiplier));
+    @media(max-width: 1024px) {
+      min-height: 50vh;
+      padding-bottom: calc(64 * var(--width-multiplier));
+    }
+    @media(max-width: 767px) {
+      min-height: 100vh;
+      padding-bottom: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__letters {
@@ -14,6 +22,10 @@
     align-items: flex-end;
     gap: calc(8 * var(--width-multiplier));
     margin-bottom: calc(50 * var(--width-multiplier));
+    @media(max-width: 767px) {
+      align-items: center;
+      margin-bottom: calc(32 * var(--width-multiplier));
+    }
   }
 
   &__letter {
@@ -38,11 +50,22 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: calc(40 * var(--width-multiplier));
+    @media(max-width: 1024px) {
+      gap: calc(24 * var(--width-multiplier));
+    }
+    @media(max-width: 767px) {
+      flex-direction: column;
+      gap: calc(16 * var(--width-multiplier));
+    }
   }
 
   &__title {
     max-width: calc(466 * var(--width-multiplier));
     font: 400 calc(42 * var(--width-multiplier))/1.1 CirceRounded;
+    @media(max-width: 767px) {
+      max-width: unset;
+      font-size: calc(32 * var(--width-multiplier));
+    }
   }
 
   &__side {
@@ -51,6 +74,9 @@
     gap: calc(16 * var(--width-multiplier));
     max-width: calc(300 * var(--width-multiplier));
     flex-shrink: 0;
+    @media(max-width: 767px) {
+      max-width: unset;
+    }
   }
 
   &__desc {

@@ -88,4 +88,8 @@
     width: calc(24 * var(--width-multiplier));
     height: calc(24 * var(--width-multiplier));
   }
+
+  @media(max-width: 767px) {
+    display: none;
+  }
 }

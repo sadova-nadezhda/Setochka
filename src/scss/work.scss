@@ -5,6 +5,12 @@
     max-width: calc(620 * var(--width-multiplier));
     margin: 0 auto;
     margin-bottom: calc(70 * var(--width-multiplier));
+    @media (max-width: 1024px) {
+      margin-bottom: calc(50 * var(--width-multiplier));
+    }
+    @media (max-width: 767px) {
+      margin-bottom: calc(24 * var(--width-multiplier));
+    }
   }
 
   &__title {
@@ -66,6 +72,11 @@
       background-color: var(--accent, $accent);
       transform: rotate(1deg);
     }
+
+    @media (max-width: 767px) {
+      gap: calc(8 * var(--width-multiplier));
+      padding: calc(12 * var(--width-multiplier));
+    }
   }
 
   &__img {
@@ -89,6 +100,9 @@
 
   &__name {
     font: 400 calc(32 * var(--width-multiplier))/1.1 CirceRounded;
+    @media (max-width: 767px) {
+      font-size: calc(20 * var(--width-multiplier));
+    }
   }
 
   &__desc {
