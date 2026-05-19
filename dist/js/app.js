@@ -496,7 +496,6 @@
       const item = btn.closest(".faq__item");
       const isOpen = item.classList.contains("is-open");
 
-      // Close all open items
       $$(".faq__item.is-open").forEach((el) => {
         el.classList.remove("is-open");
         gsap.to(el.querySelector(".faq__answer"), {
@@ -507,7 +506,6 @@
         });
       });
 
-      // Open clicked item if it was closed
       if (!isOpen) {
         item.classList.add("is-open");
         gsap.to(item.querySelector(".faq__answer"), {
@@ -515,7 +513,10 @@
           duration: 0.35,
           ease: "power2.inOut",
           overwrite: true,
+          onComplete: () => window.lenis?.resize(),
         });
+      } else {
+        gsap.delayedCall(0.35, () => window.lenis?.resize());
       }
     });
   };
